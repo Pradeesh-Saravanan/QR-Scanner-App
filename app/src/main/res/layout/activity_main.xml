@@ -13,8 +13,8 @@
         android:id="@+id/layout_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="155dp"
         tools:layout_editor_absoluteY="290dp">
@@ -22,21 +22,23 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginTop="150dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/qr_scan" />
-
-        <TextView
-            android:id="@+id/textResult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
-            android:layout_marginTop="16dp"
-            android:text="  Scan"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+
+    <TextView
+        android:id="@+id/textResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="@string/scan"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textIsSelectable="true"
+        android:textSize="30sp"
+        android:textStyle="bold" />
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
@@ -52,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
-        android:contentDescription="@string/qrscanner"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/qr_scan"
         app:layout_anchor="@+id/bottomAppBar"
         app:layout_anchorGravity="center"

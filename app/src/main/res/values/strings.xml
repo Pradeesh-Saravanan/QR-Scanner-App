@@ -2,4 +2,5 @@
     <string name="app_name">QR Scanner</string>
     <string name="todo">TODO</string>
     <string name="qrscanner">QRScanner</string>
+    <string name="scan">Scan</string>
 </resources>

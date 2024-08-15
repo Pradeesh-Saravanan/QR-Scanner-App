@@ -13,7 +13,6 @@ import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanIntentResult
 import com.journeyapps.barcodescanner.ScanOptions
 
-
 class MainActivity : AppCompatActivity() {
     private val requestPermissionLauncher = registerForActivityResult(contract = ActivityResultContracts.RequestPermission()){
         isGranted:Boolean->
@@ -41,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private lateinit var binding:ActivityMainBinding
-        private fun showCamera(){
+    private fun showCamera(){
             val options = ScanOptions()
             options.setDesiredBarcodeFormats(ScanOptions.QR_CODE)
             options.setPrompt("Scan QR code")
