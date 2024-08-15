@@ -19,7 +19,7 @@ To run the QR Scanner App, follow these steps:
 1. **Clone the Repository:**
 
    ```bash
-   git clone [https://github.com/Pradeesh-Saravanan/qrscanner.git](https://github.com/Pradeesh-Saravanan/QR-Scanner-App.git)
+   git clone https://github.com/Pradeesh-Saravanan/QR-Scanner-App.git
    ```
 
 2. **Open the Project:**
