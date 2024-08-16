@@ -1,6 +1,7 @@
 package com.example.qrscanner
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Toast
@@ -19,9 +20,6 @@ class MainActivity : AppCompatActivity() {
         if(isGranted){
             showCamera()
         }
-        else{
-            //
-        }
     }
 
     private val scanLauncher=registerForActivityResult(ScanContract()){
@@ -32,13 +30,23 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 setResult(result.contents)
+                binding.share.setOnClickListener{
+                    shareContent(result.contents)
+                }
             }
-    }
+        }
     }
     private fun setResult(string:String){
         binding.textResult.text = string
     }
-
+    private fun shareContent(content: String) {
+        val shareIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, content)
+            type = "text/plain"
+        }
+        startActivity(Intent.createChooser(shareIntent, "Share via"))
+    }
     private lateinit var binding:ActivityMainBinding
     private fun showCamera(){
             val options = ScanOptions()
