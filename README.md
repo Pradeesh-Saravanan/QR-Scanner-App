@@ -12,6 +12,13 @@ The QR Scanner App is an basic Android application that allows users to scan QR 
 - Display scanned QR code content in the app
 - Modern user interface with a floating action button (FAB) for scanning
 
+## Version
+
+- Version 1.0 : First version
+- Version 1.1 : Updated UI
+- Version 1.2 : Long press to copy option after scanning
+- Version 1.3 : New Share feature
+
 ## Installation
 
 To run the QR Scanner App, follow these steps:
