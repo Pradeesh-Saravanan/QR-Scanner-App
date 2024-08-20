@@ -66,6 +66,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.navigation.runtime.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -76,4 +79,10 @@ dependencies {
 
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
     implementation("com.google.zxing:core:3.4.1")
+//    implementation("androidx.navigation:navigation-runtime-ktx:2.6.0")
+//    implementation("androidx.appcompat:appcompat:1.4.0")
+//    implementation("com.google.android.material:material:1.12.0")
+//    testImplementation("junit:junit:4.+")
+//    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+//    androidTestImplementation("androidx.test.expresso:espresso-core:3.4.0")
 }

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +22,6 @@ class MainActivity : AppCompatActivity() {
             showCamera()
         }
     }
-
     private val scanLauncher=registerForActivityResult(ScanContract()){
         result: ScanIntentResult ->
         kotlin.run{
@@ -30,10 +30,18 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 setResult(result.contents)
+                showQR(result.contents);
                 binding.share.setOnClickListener{
                     shareContent(result.contents)
                 }
             }
+        }
+    }
+    private  fun showQR(string:String){
+        binding.showqr.setOnClickListener{
+                val intent = Intent(this, ShowQR::class.java)
+                intent.putExtra("msg", string)
+                startActivity(intent)
         }
     }
     private fun setResult(string:String){
@@ -52,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             val options = ScanOptions()
             options.setDesiredBarcodeFormats(ScanOptions.QR_CODE)
             options.setPrompt("Scan QR code")
-            options.setCameraId(0)
+            options.setCameraId(1)
             options.setBeepEnabled(false)
             options.setBarcodeImageEnabled(true)
             options.setOrientationLocked(false)
@@ -64,6 +72,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initBinding()
         initViews()
+//        var show = findViewById<Button>(R.id.showqr)
+//        binding.showqr.setOnClickListener{
+//            startActivity(Intent(this,ShowQR::class.java))
+//        }
     }
     private fun initViews(){
         binding.fab.setOnClickListener{
